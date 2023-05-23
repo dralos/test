@@ -69,3 +69,4 @@ I decided to add a simple jsonWebToken since is the one that i have worked with 
 ```
   I'am so sorry for the late delivery had really a rough time this last week, if i had more time i would have loved to add a caching system with redis for the get of the messages and make the response even faster. I think i did a mess with the the jobs xD, decided for a real simple approach at the end, a worker system would have been the best maybe next time. I used Mongo as in memory db, at the end it revealed to be bottle-neck since it had been a really long since i last used it, was worse than to use a sql db like sequelize but i decided to keep it. I'am sorry for the commit history since this will be the only commit but like i said i did not have much time this week, only sunday night i know is not an excuse,just wanted to point it out. Thanks for giving me this exercise. It really helped me find some of my flaws and I really enjoyed working on it.
 ```
+@go-viceversa
