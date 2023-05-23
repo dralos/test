@@ -1,4 +1,16 @@
-import { verify } from "jsonwebtoken";
+import jwt, { verify } from "jsonwebtoken";
+
+const { TokenExpiredError } = jwt;
+
+const catchError = (err, res) => {
+  if (err instanceof TokenExpiredError) {
+    return res
+      .status(401)
+      .send({ message: "Unauthorized! Access Token was expired!" });
+  }
+
+  return res.sendStatus(401).send({ message: "Unauthorized!" });
+};
 
 export const auth = (req, res, next) => {
   let token = "";

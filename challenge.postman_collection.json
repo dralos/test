@@ -211,6 +211,19 @@
 		},
 		{
 			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.environment.set(\"token\", jsonData.accessToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -264,7 +277,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmFjZDJjNmU3YWM2MWFjMGFkZTg0NSIsImlhdCI6MTY4NDcyMDk0MywiZXhwIjoxNjg0NzI0NTQzfQ.XC7gvXmk0Mgq0GoUGGnGQHjTgSoqqKy_Lv4NW-c8cCo",
+				"value": "{{token}}",
 				"type": "string"
 			}
 		]
